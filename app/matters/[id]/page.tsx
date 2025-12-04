@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase'
 
+import ContactsTab from './ContactsTab'
+import NotesTab from './NotesTab'
+
 type Tab = 'info' | 'notes' | 'time' | 'payment' | 'contacts' | 'email' | 'docs'
 
 export default function MatterDetailPage() {
@@ -147,15 +150,6 @@ function MatterInfoTab({ matter, onUpdate }: { matter: any; onUpdate: () => void
   )
 }
 
-// Notes Tab Component
-function NotesTab({ matterId }: { matterId: string }) {
-  return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h2 className="text-xl font-semibold text-gray-900 mb-4">Notes</h2>
-      <p className="text-gray-500">Notes functionality coming next...</p>
-    </div>
-  )
-}
 
 // Time Entry Tab Component
 function TimeEntryTab({ matterId, matter }: { matterId: string; matter: any }) {
@@ -197,15 +191,6 @@ function PaymentTrackingTab({ matterId }: { matterId: string }) {
   )
 }
 
-// Contacts Tab Component
-function ContactsTab({ matterId }: { matterId: string }) {
-  return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h2 className="text-xl font-semibold text-gray-900 mb-4">Relationships & Contacts</h2>
-      <p className="text-gray-500">Contacts functionality coming next...</p>
-    </div>
-  )
-}
 
 // Email Tab Component
 function EmailTab({ matterId, matter }: { matterId: string; matter: any }) {

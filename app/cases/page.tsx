@@ -99,7 +99,7 @@ export default function DashboardPage() {
     filterMatters()
   }
 
-  const uniqueMatterTypes = Array.from(new Set(matters.map(m => m.matter_type).filter(Boolean)))
+  const uniqueMatterTypes = Array.from(new Set(matters.map(m => m.matter_type).filter((type): type is string => Boolean(type))))
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr)
